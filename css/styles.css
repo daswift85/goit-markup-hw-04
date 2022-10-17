@@ -473,7 +473,7 @@ hr {
 .top-contacts-item:first-child {
   margin-left: 0px;
 }
-a.logo-nav {
+.logo-nav {
   font-family: Raleway;
   font-size: 26px;
   font-weight: 700;
@@ -611,7 +611,7 @@ p.feature-text {
   margin-top: 10px;
 }
 .wwd {
-  padding-top: 94px;
+  padding-top: 0px;
   padding-bottom: 94px;
   text-align: center;
   padding-left: 0px;
@@ -827,7 +827,8 @@ section {
 }
 
 .portfolio-item:hover {
-  box-shadow: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000f, 0px 1px 1px 0px #0000001f;
+  box-shadow: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000f,
+    0px 1px 1px 0px #0000001f;
   cursor: pointer;
 }
 img {
@@ -854,6 +855,8 @@ header {
   padding: 25px 102px 25px 102px;
 }
 .icon-header {
+  margin-right: 10px;
+  vertical-align: middle;
 }
 .link-item:hover {
   fill: #2196f3;
@@ -890,6 +893,7 @@ header {
   margin-top: 16px;
   margin-bottom: 30px;
   padding: 0;
+  gap: 10px;
 }
 .clients-list {
   display: flex;
@@ -925,8 +929,10 @@ header {
   padding: 12px;
   margin: 0px;
 }
-.connect-link:hover,
-:focus {
+.connect-link:hover {
+  background-color: #2196f3;
+}
+.connect-link:focus {
   background-color: #2196f3;
 }
 
@@ -946,12 +952,52 @@ header {
   text-align: left;
 }
 .connect-items {
-  flex: 0 0 25%;
-  margin-top: 12px;
 }
 .adr-items {
   flex: 0 0 25%;
 }
 .footer-raw {
   display: flex;
+  align-items: baseline;
+}
+
+.portfolio-item {
+  position: relative;
+  width: 50%;
+  max-width: 370px;
+}
+
+/* Make the image to responsive */
+.portfolio-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay-item {
+  position: absolute;
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: #2196f3e5;
+  color: #f1f1f1;
+  width: 100%;
+  height: 294px;
+  transform: translatey(100%);
+  transition: transform 250ms ease;
+  opacity: 0;
+  color: white;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 63px 24px;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.portfolio-item:hover .overlay-item {
+  opacity: 1;
+  transform: translatey(0);
 }
